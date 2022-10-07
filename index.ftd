@@ -1,57 +1,468 @@
--- import: fifthtry.github.io/dash-dash-cs/assets
+-- import: fpm
+-- import: cd
+-- import: fifthtry.github.io/color-doc/color-ui as cu
+-- import: fifthtry.github.io/package-doc/doc as pd
 
 
 
--- ds.page: Welcome to your [FPM site](https://fpm.dev/)
 
-FPM Blank Package Template Repo
+-- boolean is-mobile: false
 
-🧑‍🚀 **Seasoned traveler?** update this file. Enjoy!
+-- is-mobile: true
+if: $ftd.device == mobile
 
 
---- ds.image: doc-site
-src: $assets.files.doc-site-example.png
+-- ftd.column:
+width: fill
+padding-horizontal: 20
+padding-vertical: 20
+padding-horizontal if $is-mobile: 20
+background-color: $fpm.color.main.background.base
+
+
+-- pd.package: dash-dash-ds
+name: fifthtry.github.io/dash-dash-ds
+
+dash-dash-ds  is a color scheme which can be used to change color scheme of web 
+packages via using `FTD` lang.
+
+To use `dash-dash-ds` color scheme on your web package, add below into `FPM.ftd` file:
+
+-- cb.code:
+lang: ftd
+
+\-- fpm.dependency: fifthtry.github.io/dash-dash-ds as dash-dash-ds
+
+
+-- tf.markdown:
+
+Import `blue-sapphire` into `FPM/config.ftd` file.
+
+-- cb.code:
+lang: ftd
+
+\-- import: dash-dash-ds
+
+-- color-display:
+color: $fpm.color
+minimize: true
+
+
+
+
+
+
+-- ftd.row color-display:
+fpm.color-data color:
+optional boolean minimize:
 width: fill
 
-
---- ds.h1: 🚀 Project Structure
-
-Inside of your FPM project, you'll see the following folders and files:
-
-
---- ds.code:
-lang:
-
-/
-├── .build/
-│   └── index.html
-├── .packages/
-│   └── fifthtry.github.io/
-│   	└── All downloaded dependencies
-│   	
-├── FPM.ftd
-├── index.ftd
-└── README.md
+--- all-color-display:
+color: $color
+minimize: $minimize
 
 
 
---- ds.h1: 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
---- ds.code:
-lang:
-
-=======================================================================
-| Command                | Action                                     |
-| :--------------------- | :----------------------------------------- |
-| fpm build              | FPM builder installs all `FPM` dependencies|
-| fpm serve              | Starts local dev server at available port  |
-|                        | `localhost:8000`                           |
-=======================================================================
 
 
---- ds.h1: 👀 Want to learn more?
 
-Feel free to check [our documentation](https://fpm.dev/) or jump into our [FifthTry Discord server](https://discord.gg/bucrdvptYd).
+
+
+
+-- ftd.column all-color-display:
+fpm.color-data color:
+optional boolean minimize: 
+background-color: $color.main.background.base
+width: fill
+
+--- ftd.row:
+width: fill
+
+--- cu.color-ui:
+color: $color
+minimize: $minimize
+
+--- container: ftd.main
+
+--- ftd.row:
+width: fill
+
+--- cd.color-display-data:
+color: $color
+
+
+
+
+
+
+
+
+-- ftd.color base-:
+light: #18181b
+dark: #18181b
+
+-- ftd.color step-1-:
+light: #141414
+dark: #141414
+
+
+-- ftd.color step-2-:
+light: #333333
+dark: #333333
+
+-- ftd.color overlay-:
+light: rgba(0, 0, 0, 0.8)
+dark: rgba(0, 0, 0, 0.8)
+
+-- ftd.color code-:
+light: #2B303B
+dark: #2B303B
+
+
+-- ftd.background-colors background-:
+base: $base-
+step-1: $step-1-
+step-2: $step-2-
+overlay: $overlay-
+code: $code-
+
+-- ftd.color border-:
+light: #ADE8F4
+dark: #ADE8F4
+
+-- ftd.color border-strong-:
+light: #CAF0F8
+dark: #CAF0F8
+
+-- ftd.color text-:
+light: #a8a29e
+dark: #a8a29e
+
+-- ftd.color text-strong-:
+light: #DDDDDD
+dark: #DDDDDD
+
+-- ftd.color shadow-:
+light: #143a44
+dark: #143a44
+
+-- ftd.color scrim-:
+light: #143a44
+dark: #143a44
+
+-- ftd.color cta-primary-base-:
+light: #f3db5f
+dark: #f3db5f
+
+-- ftd.color cta-primary-hover-:
+light:  #2a747b
+dark:  #2a747b
+
+-- ftd.color cta-primary-pressed-:
+light: #143a44
+dark: #143a44
+
+-- ftd.color cta-primary-disabled-:
+dark: #CAF0F8
+light: #CAF0F8
+
+-- ftd.color cta-primary-focused-:
+light: #143a44
+dark: #143a44
+
+-- ftd.color cta-primary-border-:
+light: #4540d9
+dark: #4540d9
+
+-- ftd.color cta-primary-text-:
+light: #1813b8
+dark: #1813b8
+
+
+-- ftd.cta-colors cta-primary-:
+base: $cta-primary-base-
+hover: $cta-primary-hover-
+pressed: $cta-primary-pressed-
+disabled: $cta-primary-disabled-
+focused: $cta-primary-focused-
+border: $cta-primary-border-
+text: $cta-primary-text-
+
+-- ftd.color cta-secondary-base-:
+light: #da7a4a
+dark: #da7a4a
+
+-- ftd.color cta-secondary-hover-:
+light: #7d8597
+dark:  #7d8597
+
+-- ftd.color cta-secondary-pressed-:
+light: #5c677d
+dark: #5c677d
+
+-- ftd.color cta-secondary-disabled-:
+light: rgba(174, 212, 202, 0.4)
+dark: rgba(174, 212, 202, 0.4)
+
+-- ftd.color cta-secondary-focused-:
+light: 	 #454545
+dark: 	 #454545
+
+-- ftd.color cta-secondary-border-:
+light: 	 #DBF3F6
+dark: 	 #DBF3F6
+
+-- ftd.color cta-secondary-text-:
+light: #DBF3F6
+dark: #DBF3F6
+
+-- ftd.cta-colors cta-secondary-:
+base: $cta-secondary-base-
+hover: $cta-secondary-hover-
+pressed: $cta-secondary-pressed-
+disabled: $cta-secondary-disabled-
+focused: $cta-secondary-focused-
+border: $cta-secondary-border-
+text: $cta-secondary-text-
+
+-- ftd.color cta-tertiary-base-:
+light: #593d3b
+dark: #593d3b
+
+-- ftd.color cta-tertiary-hover-:
+light: #8a7968
+dark: #8a7968
+
+-- ftd.color cta-tertiary-pressed-:
+light: #6f5e53
+dark: #6f5e53
+
+-- ftd.color cta-tertiary-disabled-:
+light: #c3a995
+dark: #c3a995
+
+-- ftd.color cta-tertiary-focused-:
+light: #774936
+dark: #774936
+
+-- ftd.color cta-tertiary-border-:
+light: #c3a995
+dark: #c3a995
+
+-- ftd.color cta-tertiary-text-:
+light: #f5d0c5
+dark: #f5d0c5
+
+-- ftd.cta-colors cta-tertiary-:
+base: $cta-tertiary-base-
+hover: $cta-tertiary-hover-
+pressed: $cta-tertiary-pressed-
+disabled: $cta-tertiary-disabled-
+focused: $cta-tertiary-focused-
+border: $cta-tertiary-border-
+text: $cta-tertiary-text-
+
+-- ftd.color cta-danger-base-:
+light: #FFFBFE
+dark: #1C1B1F
+
+-- ftd.color cta-danger-hover-:
+light: #FFFBFE
+dark: #1C1B1F
+
+-- ftd.color cta-danger-pressed-:
+light: #FFFBFE
+dark: #1C1B1F
+
+-- ftd.color cta-danger-disabled-:
+light: #FFFBFE
+dark: #1C1B1F
+
+-- ftd.color cta-danger-focused-:
+light: #FFFBFE
+dark: #1C1B1F
+
+-- ftd.color cta-danger-border-:
+light: #FFFBFE
+dark: #1C1B1F
+
+-- ftd.color cta-danger-text-:
+light: #FFFBFE
+dark: #1C1B1F
+
+-- ftd.cta-colors cta-danger-:
+base: $cta-danger-base-
+hover: $cta-danger-hover-
+pressed: $cta-danger-pressed-
+disabled: $cta-danger-disabled-
+focused: $cta-danger-focused-
+border: $cta-danger-border-
+text: $cta-danger-text-
+
+-- ftd.color accent-primary-:
+light: #4ed42d
+dark: #4ed42d
+
+-- ftd.color accent-secondary-:
+light: #4fb2df
+dark: #4fb2df
+
+-- ftd.color accent-tertiary-:
+light: #f1f3f4
+dark: #f1f3f4
+
+-- ftd.pst accent-:
+primary: $accent-primary-
+secondary: $accent-secondary-
+tertiary: $accent-tertiary-
+
+-- ftd.color error-base-:
+light: #ffebe6
+dark: #ffebe6
+
+-- ftd.color error-text-:
+light: #d91a00
+dark: #d91a00
+
+-- ftd.color error-border-:
+light: #d91a00
+dark: #d91a00
+
+-- ftd.btb error-btb-:
+base: $error-base-
+text: $error-text-
+border: $error-border-
+
+-- ftd.color success-base-:
+light: #282f25
+dark: #282f25
+
+-- ftd.color success-text-:
+light: #e3f0c4
+dark: #e3f0c4
+
+-- ftd.color success-border-:
+light: #3d741f
+dark: #3d741f
+
+-- ftd.btb success-btb-:
+base: $success-base-
+text: $success-text-
+border: $success-border-
+
+-- ftd.color info-base-:
+light: #abcaed
+dark: #abcaed
+
+-- ftd.color info-text-:
+light: #205694
+dark: #205694
+
+-- ftd.color info-border-:
+light: #205694
+dark: #205694
+
+-- ftd.btb info-btb-:
+base: $info-base-
+text: $info-text-
+border: $info-border-
+
+-- ftd.color warning-base-:
+light: #dba257
+dark: #dba257
+
+-- ftd.color warning-text-:
+light: #966220
+dark: #966220
+
+-- ftd.color warning-border-:
+light: #966220
+dark: #966220
+
+-- ftd.btb warning-btb-:
+base: $warning-base-
+text: $warning-text-
+border: $warning-border-
+
+-- ftd.color custom-one-:
+light: #ed753a
+dark: #ed753a
+
+-- ftd.color custom-two-:
+light: #f3db5f
+dark: #f3db5f
+
+-- ftd.color custom-three-:
+light: #8fdcf8
+dark: #8fdcf8
+
+-- ftd.color custom-four-:
+light: #7a65c7
+dark: #7a65c7
+
+-- ftd.color custom-five-:
+light: #eb57be
+dark: #eb57be
+
+-- ftd.color custom-six-:
+light: #ef8dd6
+dark: #ef8dd6
+
+-- ftd.color custom-seven-:
+light: #7564be
+dark: #7564be
+
+-- ftd.color custom-eight-:
+light: #d554b3
+dark: #d554b3
+
+-- ftd.color custom-nine-:
+light: #ec8943
+dark: #ec8943
+
+-- ftd.color custom-ten-:
+light: #da7a4a
+dark: #da7a4a
+
+-- ftd.custom-colors custom-:
+one: $custom-one-
+two: $custom-two-
+three: $custom-three-
+four: $custom-four-
+five: $custom-five-
+six: $custom-six-
+seven: $custom-seven-
+eight: $custom-eight-
+nine: $custom-nine-
+ten: $custom-ten-
+
+-- ftd.color-scheme main:
+background: $background-
+border: $border-
+border-strong: $border-strong-
+text: $text-
+text-strong: $text-strong-
+shadow: $shadow-
+scrim: $scrim-
+cta-primary: $cta-primary-
+cta-secondary: $cta-secondary-
+cta-tertiary: $cta-tertiary-
+cta-danger: $cta-danger-
+accent: $accent-
+error: $error-btb-
+success: $success-btb-
+info: $info-btb-
+warning: $warning-btb-
+custom: $custom-
+
+
+-- fpm.color:
+main: $main
+alt: $main
+primary: $main
+secondary: $main
+tertiary: $main
+surface: $main
+surface-alt: $main
+glass: $main
 
